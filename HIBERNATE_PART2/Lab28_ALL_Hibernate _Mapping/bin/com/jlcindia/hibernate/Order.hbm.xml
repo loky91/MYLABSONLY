@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Order" table="orders">
+ 
+ <id name="orderId" column="orderId" type="int">
+ 
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="totalQty" type="int"/>
+ <property name="totalCost" type="double"/>
+ <property name="orderDate" type="date"/>
+ <property name="status" />
+ 
+ <many-to-one name="customer" class="com.jlcindia.hibernate.Customer" column="cid"/>
+ 
+ <many-to-one name="address" class="com.jlcindia.hibernate.ShippingAddress" column="addid"/>
+ 
+ <set name="orderItems">
+ 
+ <key column="orderId"/>
+ 
+ <one-to-many class="OrderItem"/>
+ 
+ </set>
+ 
+ 
+</class>
+ 
+ </hibernate-mapping>

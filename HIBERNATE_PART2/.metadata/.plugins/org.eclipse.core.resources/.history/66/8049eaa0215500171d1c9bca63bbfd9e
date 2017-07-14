@@ -1,0 +1,29 @@
+package com.jlcindia.hibernate;
+
+import org.hibernate.*;
+
+public class Lab44A {
+
+	public static void main(String args[]) {
+		
+		try {
+			
+			SessionFactory sf=HibernateUtil.getSessionFactory();
+			Session session=sf.openSession();
+			
+			Transaction tx=session.beginTransaction();
+			
+			SID id=SIDGenerator.getNextSid("30");
+			Student stu=new Student(id,"vas","vas@jlc.com","999");
+			
+			
+		}catch(Exception e) {
+			
+			
+		}
+		
+		
+	}
+	
+	
+}

@@ -1,0 +1,28 @@
+package com.jlcindia.hibernate;
+
+import java.util.*;
+import org.hibernate.*;
+
+import net.sf.ehcache.hibernate.HibernateUtil;
+
+public class Lab32A {
+
+	public static void main(String args[]) {
+		Transaction tx=null;
+		try {
+			
+			SessionFactory sf=HibernateUtil.g
+			
+			
+		}catch(Exception e) {
+			if(tx!=null) {
+				
+				tx.rollback();
+			}
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+}

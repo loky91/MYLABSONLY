@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Customer" table="customers3">
+ <id name="cid" column="cid" type="int">
+ <generator class="increment"/>
+ </id>
+ 
+ 
+ <version name="version" type="integer" column="version"/>
+ <property name="cname"/>
+ <property name="email"/>
+ <property name="phone" type="long"/>
+ 
+ 
+ </class>
+ 
+ 
+ </hibernate-mapping>

@@ -1,0 +1,35 @@
+package com.jlcindia.hibernate;
+
+import com.jlcindia.util.CustomerTo;
+import com.jlcindia.dao.*;
+
+public class Lab30 {
+
+	public static void main(String args[]) {
+		
+		CustomerDAO cdao=DAOFactory.getCustomerDAO();
+		
+		
+		
+		//1.ADD CUSTOMER
+//		CustomerTo cto=new CustomerTo("sri","sri@jlc",9999,"blore","enabled");
+//		cdao.addCustomer(cto);
+	//2.GET CUSTOMER
+	
+		CustomerTo c1=cdao.getCustomerByCid(1);
+		System.out.println(c1.getCid()+"\t"+c1.getCname()+"\t"+c1.getEmail()+"\t"+c1.getPhone()+"\t"+c1.getCity()+"\t"+c1.getStatus());
+
+		//3.DELETE CUSTOMER		
+//		cdao.deleteCustomer(4);
+		
+		//4.UPDATE CUSTOMER
+//		CustomerTo c2=cdao.getCustomerByCid(2);
+//		c2.setCname("vas");
+//		c2.setEmail("vas@jlc");
+//        c2.setPhone(9999);
+//        cdao.updateCustomer(c2);
+		
+		
+	}
+	
+}

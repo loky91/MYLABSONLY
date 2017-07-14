@@ -1,0 +1,16 @@
+package com.jlcindia.hibernate;
+
+import java.io.*;
+import java.util.*;
+
+import org.hibernate.*;
+import org.hibernate.engine.spi.*;
+import org.hibernate.id.*;
+
+
+public class CIDGenerator implements IdentifierGenerator {
+
+	
+	
+	
+}

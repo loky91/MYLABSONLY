@@ -1,0 +1,11 @@
+package com.jlcindia.hibernate;
+
+public class CurrentStudent extends Student {
+
+	private double feebal;
+	private String branch;
+private String timings;
+	public CurrentStudent() {}
+	
+	
+}

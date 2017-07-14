@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Student" table="jlcstudents2">
+ <id name="sid" column="sid" type="int">
+ 
+ <generator class="increment"/>
+ 
+ </id>
+ <property name="sname"/>
+ <property name="email"/>
+ <property name="phone" type="long"/>
+ 
+ <set name="courses" table="stu_cou">
+ <key column="sid"/>
+ <many-to-many class="Course" column="cid"/>
+ </set>
+ </class>
+ </hibernate-mapping>

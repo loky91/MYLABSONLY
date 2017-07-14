@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Student" table="jlcstudents" discriminator-value="STU">
+ 
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ </id>
+ 
+ 
+ <discriminator column="stutype"/>
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+ 
+ <subclass name="CurrentStudent" discriminator-value="CSTU">
+ <property name="feebal" type="double"/>
+ <property name="timings"/>
+ <property name="branch"/>
+ 
+ <subclass name="WeekdayStudent" discriminator-value="WDSTU">
+ 
+ <property name="qualification"/>
+ <property name="percentage"/>
+  <property name="yop" type="int"/>
+  
+  
+ 
+ </subclass>
+ 
+ <subclass name="WeekendStudent" discriminator-value="WESTU">
+ 
+ <property name="ocompany"/>
+ <property name="ocemail"/>
+  <property name="octc" type="double"/>
+  
+  
+ 
+ </subclass>
+ </subclass>
+ 
+ <subclass name="OldStudent" discriminator-value="OSTU">
+ 
+ <property name="ocompany"/>
+ <property name="ocemail"/>
+  <property name="octc" type="double"/>
+ </subclass>
+ </class>
+ 
+ 
+ </hibernate-mapping>

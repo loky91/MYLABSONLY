@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+ 
+ 
+ 
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Request" table="requests">
+ <id name="reqid" column="reqid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="reqdate"/>
+ <property name="description"/>
+ <property name="status"/>
+ <many-to-one name="customer" class="Customer" column="cid"/>
+ 
+ </class>
+ </hibernate-mapping>

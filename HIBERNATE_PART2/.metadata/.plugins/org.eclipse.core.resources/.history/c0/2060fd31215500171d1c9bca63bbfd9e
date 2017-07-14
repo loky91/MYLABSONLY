@@ -1,0 +1,66 @@
+package com.jlcindia.hibernate;
+
+
+import java.io.*;
+import java.util.*;
+
+import org.hibernate.*;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+import org.hibernate.*;
+
+
+	public class SIDGenerator{	
+		public static SID getNextSid(String bid) {
+			SID sid=null;
+			Transaction tx=null;
+			
+	try {
+		
+		Session s=(Session)si;
+		Transaction tx=s.getTransaction();
+		
+		Query q1=s.createQuery("from Customer cust");
+		int size=q1.list().size();
+		if(size!=0) {
+			Query query=s.createQuery("select max(cust.cid) from Customer cust");
+			
+			
+			List list=query.list();
+			System.out.println(list.size());
+			Object o=list.get(0);
+			System.out.println(o);
+			String id="";
+			
+			id=o.toString();
+			String p2=id.substring(2);
+			int x=Integer.parseInt(p2);
+			
+			x=x+1;
+			if(x<=9) {
+				sid="C-00"+x;
+			}else if(x<=99){
+				
+				sid="C-0"+x;
+				
+			}else if(x<=999) {
+				sid="C-"+x;
+				
+			}
+			
+		}
+	}catch(Exception e) {
+		if(tx!=null) {
+			
+			tx.rollback();
+		}
+		e.printStackTrace();	
+		
+	}		
+			return sid;
+		}
+	
+	
+		}
+

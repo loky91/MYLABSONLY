@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ 
+ <class name="Customer" table="customers1">
+ <id name="cid" column="cid" type="int">
+ <generator class="increment"/>
+ </id>
+ 
+ 
+
+ <property name="cname"/>
+<property name="email"/>
+ <property name="city"/>
+ <property name="cardBal" type="double"/>
+ <property name="cardType"/>
+ <property name="cardNo" type="int"/>
+ <property name="status"/>
+ 
+ </class>
+ 
+<sql-query name="AllCustomers">
+<return class="Customers"/>
+SELECT * FROM customers1
+</sql-query>
+
+ 
+ <sql-query name="CustomersByCity">
+<return class="Customers"/>
+SELECT * FROM customers1 cust WHERE cust.city=?
+</sql-query>
+ 
+ 
+ <sql-query name="CustomersByEmail">
+<return class="Customers"/>
+SELECT * FROM customers1 cust WHERE cust.email=?
+</sql-query>
+
+
+<sql-query name="CustomersByCityAndStatus">
+<return class="Customers"/>
+SELECT * FROM customers1 cust WHERE cust.city=? and cust.status=?
+</sql-query>
+ </hibernate-mapping>
+ 

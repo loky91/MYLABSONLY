@@ -1,0 +1,23 @@
+package com.jlcindia.hibernate;
+
+public class WeekdayStudent extends CurrentStudent{
+	
+private String qualification;
+private String percentage;
+private int yop;
+
+public WeekdayStudent() {}
+
+public WeekdayStudent(String sname,String city,String status,double totalfee,String timings,String branch,String qualification,String percentage,int yop){
+	
+	Super(sname,city,status,totalfee,feebal,timings,branch);
+	this.qualification=qualification;
+	this.percentage=percentage;
+	this.yop=yop;
+	
+	
+	
+}
+
+
+}

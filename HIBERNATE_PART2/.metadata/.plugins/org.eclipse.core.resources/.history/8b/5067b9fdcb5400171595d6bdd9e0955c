@@ -1,0 +1,37 @@
+package com.jlcindia.hibernate;
+import org.hibernate.*;
+
+public class Lab41 {
+public static void main(String args[]) {
+	try {
+	
+	SessionFactory sf=HibernateUtil.getSessionFactory();
+	Session session=sf.openSession();
+	Transaction tx=session.beginTransaction();
+	
+	
+	Customer cust=new Customer("C-103","sd","sd@jlc.com",12345);
+	
+	String customerid=session.save(cust).toString();
+	
+	System.out.println(customerid);
+session.flush();
+tx.commit();
+
+
+Customer cu=(Customer)session.load(Customer.class," 402881835cbf73df015cbf73e1600000");
+System.out.println(cu.getCid()+"/t"+cu.getCname()+"/t"+cu.getEmail()+"/t"+cu.getPhone()+"/t"+cu.getPhone());
+
+
+tx.commit();
+session.close();
+
+
+}catch(Exception e) {
+e.printStackTrace();	
+	
+}
+	
+	
+}
+}

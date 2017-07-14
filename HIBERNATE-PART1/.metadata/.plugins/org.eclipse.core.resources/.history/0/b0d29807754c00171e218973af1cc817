@@ -1,0 +1,21 @@
+package com.jlcindia.hibernate;
+
+public class OldStudent extends Student{
+
+	private String ocompany;
+	private String ocemail;
+	private double octc;
+	
+	public OldStudent () {}
+
+	public OldStudent(String sname,String city,String status,double totalfee,String ocompany, String ocemail, double octc) {
+		super(sname,city,status,totalfee);
+		this.ocompany = ocompany;
+		this.ocemail = ocemail;
+		this.octc = octc;
+	}
+	
+	
+	
+	
+}

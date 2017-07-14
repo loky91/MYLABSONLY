@@ -1,0 +1,48 @@
+package com.jlcindia.hibernate;
+
+public class CurrentStudent extends Student {
+
+	private double feebals;
+	private String branch;
+private String timings;
+
+	public CurrentStudent() {}
+	
+	public CurrentStudent(String sname,String city,String status,double totalfee,double feebals,String timings,String branch) {
+		
+		super(sname,city,status,totalfee);
+		this.feebals=feebals;
+		this.timings=timings;
+		this.branch=branch;
+	}
+
+	public double getFeebals() {
+		return feebals;
+	}
+
+	public void setFeebal(double feebals) {
+		this.feebals = feebals;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+
+	public String getTimings() {
+		return timings;
+	}
+
+	public void setTimings(String timings) {
+		this.timings = timings;
+	} 
+	
+	public String toString() {
+		return super.toString()+","+feebals+","+timings+","+branch;
+		
+	}
+	
+}

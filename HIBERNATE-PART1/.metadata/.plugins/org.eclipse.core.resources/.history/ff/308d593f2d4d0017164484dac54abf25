@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+ 
+ <hibernate-mapping package="com.jlcindia.hibernate">
+ <class name="Student" table="mystudents1">
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+ 
+ </class>
+ 
+ 
+ 
+ <class name="OldStudent" table="ostudents1">
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+  <property name="oscompany"/>
+   <property name="osemail"/>
+    <property name="osctc" type="double"/>
+    
+ </class>
+ 
+ 
+  
+ <class name="CurrentStudent" table="cstudents1">
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+  <property name="feebal"/>
+   <property name="timings"/>
+    <property name="branch"/>
+    
+    
+ </class>
+ 
+ 
+ 
+   
+ <class name="WeekdayStudent" table="rstudents1">
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+  <property name="feebal"/>
+   <property name="timings"/>
+    <property name="branch"/>
+    <property name="qualification"/>
+   <property name="percentage"/>
+    <property name="yop" type="int"/>
+    </class>
+    
+    <class name="WeekendStudent" table="wstudents1">
+ <id name="sid" column="sid" type="int">
+ <generator class="increment"/>
+ 
+ </id>
+ 
+ <property name="sname"/>
+ <property name="city"/>
+ <property name="status"/>
+ <property name="totalfee" type="double"/>
+  <property name="feebal"/>
+   <property name="timings"/>
+    <property name="branch"/>
+    <property name="wecompany"/>
+   <property name="weemail"/>
+    <property name="wectc" type="double"/>
+    </class>
+    
+    
+    
+    
+ 
+ </hibernate-mapping>

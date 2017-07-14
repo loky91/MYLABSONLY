@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jlcindia.hibernate">
+
+<class name="Contact" table="contacts">
+
+<id name="contactid"  column="contactid" type="int">
+<generator class="sequence">
+<param name="sequence">contactid_seq</param>
+</generator>
+</id>
+<property name="firstName" column="firstname" type="string"/>
+<property name="lastName" column="lastname"/>
+<property name="email"/>
+<property name="phone" type="long"/>
+<property name="dob"/>
+<property name="status"/>
+
+
+
+</class>
+
+
+<sql-query name="GetAllJLCContacts_SP" callable="true">
+
+<return class="Contact">
+<return-property name="contactid" column="contactid"/>
+<return-property name="firstName" column="firstName"/>
+<return-property name="lastName" column="lastName"/>
+<return-property name="email" column="email"/>
+<return-property name="phone" column="phone"/>
+<return-property name="dob" column="dob"/>
+<return-property name="status" column="status"/>
+
+</return>
+
+{call getAllJLCContacts(?)}
+</sql-query>
+
+
+<sql-query name="GetAllJLCContacts_SP" callable="true">
+
+<return class="Contact">
+<return-property name="contactid" column="contactid"/>
+<return-property name="firstName" column="firstName"/>
+<return-property name="lastName" column="lastName"/>
+<return-property name="email" column="email"/>
+<return-property name="phone" column="phone"/>
+<return-property name="dob" column="dob"/>
+<return-property name="status" column="status"/>
+
+</return>
+{call getAllActiveContacts(?,:st)}
+</sql-query>
+
+
+</hibernate-mapping>

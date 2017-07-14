@@ -1,0 +1,16 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.mylyn.java.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.jlcindia.hibernate.Request"><rhs name\="com.jlcindia.hibernate.Request"/></lhs><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/></lhs><lhs name\="com.jlcindia.hibernate.Customer"><rhs name\="com.jlcindia.hibernate.SilverCustomer"/><rhs name\="com.jlcindia.hibernate.GoldCustomer"/><rhs name\="com.jlcindia.hibernate.Customer"/></lhs><lhs name\="com.jlcindia.hibernate.Address"><rhs name\="com.jlcindia.hibernate.Address"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.HashSet"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.HashSet"/></lhs><lhs name\="java.util.Set"><rhs name\="java.util.HashSet"/></lhs><lhs name\="com.jlcindia.hibernate.Author"><rhs name\="com.jlcindia.hibernate.Author"/></lhs><lhs name\="com.jlcindia.hibernate.CreditCard"><rhs name\="com.jlcindia.hibernate.CreditCard"/></lhs><lhs name\="com.jlcindia.hibernate.SilverCustomer"><rhs name\="com.jlcindia.hibernate.SilverCustomer"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="com.jlcindia.hibernate.GoldCustomer"><rhs name\="com.jlcindia.hibernate.GoldCustomer"/></lhs><lhs name\="com.jlcindia.hibernate.OrderItem"><rhs name\="com.jlcindia.hibernate.OrderItem"/></lhs><lhs name\="com.jlcindia.hibernate.Book"><rhs name\="com.jlcindia.hibernate.Book"/></lhs><lhs name\="com.jlcindia.hibernate.ShippingAddress"><rhs name\="com.jlcindia.hibernate.ShippingAddress"/></lhs><lhs name\="com.jlcindia.hibernate.Order"><rhs name\="com.jlcindia.hibernate.Order"/></lhs><lhs name\="com.jlcindia.util.CustomerTo"><rhs name\="com.jlcindia.util.CustomerTo"/></lhs><lhs name\="com.jlcindia.hibernate.Contact"><rhs name\="com.jlcindia.hibernate.Contact"/></lhs><lhs name\="java.lang.Number"><rhs name\="java.lang.Integer"/></lhs><lhs name\="com.jlcindia.hibernate.SID"><rhs name\="com.jlcindia.hibernate.SID"/></lhs><lhs name\="com.jlcindia.hibernate.Student"><rhs name\="com.jlcindia.hibernate.Student"/></lhs></history>
+content_assist_number_of_computers=24
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=13
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
