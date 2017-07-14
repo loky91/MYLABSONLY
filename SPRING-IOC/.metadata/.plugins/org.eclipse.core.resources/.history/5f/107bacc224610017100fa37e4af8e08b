@@ -1,0 +1,12 @@
+package com.jlcindia.spring;
+
+
+import org.springframework.context.*;
+import org.springframework.context.support.*;
+
+public class TestBean {
+
+
+
+	
+}

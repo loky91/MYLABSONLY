@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+     
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  
+  <property name="locations">
+  <list>
+  <value>mysql.properties</value>
+  <value>common.properties</value>
+  </list>
+  </property>
+   </bean>
+   
+   
+   <bean id="baseDS" class="com.jlcindia.spring.DataSource" abstract="true">
+   <property name="password" value="${jlc.pw}"/>
+   <property name="min" value="${jlc.min}"/>
+   <property name="max" value="${jlc.max}"/>
+   <property name="timeout" value="${jlc.timeout}"/>
+    </bean>
+   
+    
+   <bean id="mysqlDS" class="com.jlcindia.spring.DataSource" abstract="true">
+   <property name="password" value="${jlc.pw}"/>
+   <property name="min" value="${jlc.min}"/>
+   <property name="max" value="${jlc.max}"/>
+   <property name="timeout" value="${jlc.timeout}"/>
+    </bean>
+   
+   
+   </beans>

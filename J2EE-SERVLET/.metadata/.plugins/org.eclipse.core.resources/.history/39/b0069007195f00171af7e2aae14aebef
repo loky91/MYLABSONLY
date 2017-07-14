@@ -1,0 +1,54 @@
+package com.jlcindia.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestServlet extends HttpServlet {
+
+	protected void service(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException {
+		
+		String un=req.getParameter("username");
+		String pw=req.getParameter("password");
+		String rem=req.getParameter("rememberme");
+		System.out.println(rem);
+		
+		String str="";
+		
+		
+		if(un.equals(pw)) {
+			
+			str="success.html";
+			req.setAttribute("un", un);
+			req.setAttribute(pw, pw);
+			
+			if(rem!=null || rem.equals("yes")) {
+				
+				System.out.println("ADDING COOKIES NOW");
+				Cookie c1=new Cookie("UNC",un);
+				c1.setMaxAge(-1);
+				res.addCookie(c1);
+				
+				Cookie c2=new Cookie("pwc",pw);
+				c2.setMaxAge(-1);
+				res.addCookie(c2);
+				
+				
+			}
+			
+			
+		}else {
+			
+			str="error.html";
+			req.setAttribute("MSG","invalid username");
+		}
+		RequestDispatcher rd=req.getRequestDispatcher(str);
+		rd.forward(req, res);
+	}
+	
+}

@@ -1,0 +1,16 @@
+package com.jlcindia.spring;
+
+public class A {
+
+	private int a;
+	private String msg;
+	
+	public void setA(){
+		
+		
+	}
+	
+	public void setMsg(
+	
+	
+}

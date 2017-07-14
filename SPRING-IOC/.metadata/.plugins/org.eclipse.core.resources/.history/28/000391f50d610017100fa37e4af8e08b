@@ -1,0 +1,22 @@
+package com.jlcindia.spring;
+
+public class DataSource {
+
+	private String driverClass;
+	private String url;
+	private String username;
+	private String password;
+	private int min;
+	private int max;
+	private int timeout;
+	
+	
+	
+	public String toString() {
+		return "DataSource [driverClass=" + driverClass + ", url=" + url + ", username=" + username + ", password="
+				+ password + ", min=" + min + ", max=" + max + ", timeout=" + timeout + "]";
+	}
+	
+	
+	
+}

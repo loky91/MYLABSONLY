@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.jlcindia.spring.MyBeanProcessor&apos; to &apos;MyBeanPostProcessor&apos;&#x0D;&#x0A;- Original project: &apos;Lab35_application_context_life_cycle_example&apos;&#x0D;&#x0A;- Original element: &apos;com.jlcindia.spring.MyBeanProcessor&apos;&#x0D;&#x0A;- Renamed element: &apos;com.jlcindia.spring.MyBeanPostProcessor&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyBeanProcessor&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.jlcindia.spring{MyBeanProcessor.java[MyBeanProcessor" matchStrategy="1" name="MyBeanPostProcessor" qualified="false" references="true" similarDeclarations="false" stamp="1499150190731" textual="false" version="1.0"/>
+</session>

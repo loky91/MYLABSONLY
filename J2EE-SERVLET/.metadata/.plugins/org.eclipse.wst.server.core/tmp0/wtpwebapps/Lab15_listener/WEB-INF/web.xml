@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Lab15_listener</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+   
+  </welcome-file-list>
+  
+  <servlet>
+  <servlet-name>logoutservlet</servlet-name>
+  <servlet-class>com.jlcindia.spring.LogoutServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  <servlet-name>logoutservlet</servlet-name>
+  <url-pattern>/logout.jlc</url-pattern>
+  </servlet-mapping>
+  
+  
+  <listener>
+  <listener-class>com.jlcindia.spring.MyContextListener</listener-class>
+  </listener>
+
+
+<listener>
+<listener-class>com.jlcindia.spring.MySessionListener</listener-class>
+</listener>  
+
+</web-app>

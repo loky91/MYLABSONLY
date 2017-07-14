@@ -1,0 +1,51 @@
+package com.jlcindia.spring;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Hello  implements InitializingBean,DisposableBean,BeanNameAware,BeanFactoryAware,ApplicationContextAware{
+
+	
+	int x;
+	String str;
+	String msg;
+	String bname;
+	@Override//InitializingBean
+	public void afterPropertiesSet() throws Exception {
+		System.out.println(" using-InitializingBean");
+		
+	}
+	@Override//DisposableBean
+	public void destroy() throws Exception {
+		System.out.println(" using-DisposableBean");
+		
+		
+	}
+	@Override//BeanNameAware
+	public void setBeanName(String arg0) {
+		System.out.println(" using-BeanNameAware");
+		
+		
+	}
+	@Override
+	public void setBeanFactory(BeanFactory arg0) throws BeansException {
+
+		System.out.println(" using-BeanFactoryAware");
+		
+		
+	}
+	@Override
+	public void setApplicationContext(ApplicationContext arg0) throws BeansException {
+		System.out.println(" using-ApplicationContextAware");
+		
+	}
+	
+	
+	
+}

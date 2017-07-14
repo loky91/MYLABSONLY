@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="demo.jlc" method="post">
+<table>
+<tr>
+<td>
+NAME
+</td>
+<td>
+<input type="text" name="name"/>
+</td>
+</tr>
+
+
+</table>
+</form>
+
+</body>
+</html>

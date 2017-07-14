@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Lab3_ServletContext_ServletConfig</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+   </welcome-file-list>
+   
+   
+   <context-param>
+   <param-name>website</param-name>
+   <param-value>www.jlcindia.com</param-value>
+   
+   </context-param>
+   
+   <servlet>
+   <servlet-name>helloservlet</servlet-name>
+   <servlet-class>com.jlcindia.servlet.HelloServlet</servlet-class>
+   
+   <init-param>
+   
+   <param-name>email</param-name>
+   <param-value>hellosri@jlc.com</param-value>
+   
+   </init-param>
+   
+   
+   </servlet>
+   
+   <servlet-mapping>
+   <servlet-name>helloservlet</servlet-name>
+   <url-pattern>/hello.jlc</url-pattern>
+   
+   </servlet-mapping>
+   
+   
+   
+   
+   
+   
+   <servlet>
+   <servlet-name>haiservlet</servlet-name>
+   <servlet-class>com.jlcindia.servlet.HaiServlet</servlet-class>
+   
+   <init-param>
+   <param-name>email</param-name>
+   <param-value>hainivas@jlc.com</param-value>
+   </init-param>
+   
+   </servlet>
+   
+<servlet-mapping>
+<servlet-name>haiservlet</servlet-name>
+<url-pattern>/hai.jlc</url-pattern>
+
+</servlet-mapping>
+   
+</web-app>

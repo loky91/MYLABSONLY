@@ -1,0 +1,57 @@
+package com.jlcindia.spring;
+
+import org.springframework.context.*;
+import org.springframework.context.event.*;
+import org.springframework.stereotype.*;
+import org.springframework.context.annotation.*;
+@Component
+public class JLCListener {
+
+	
+	@EventListener
+	public void onApplicationEvent(ApplicationEvent event) {
+	
+		if(event instanceof BatchEvent) {
+			BatchEvent batchEvent=(BatchEvent)event;
+			Batch bat=batchEvent.getBatch();
+			System.out.println(bat);
+			
+		}
+		
+		else if(event instanceof WorkshopEvent){
+			WorkshopEvent wsEvent=(WorkshopEvent)event;
+			Workshop ws=wsEvent.getWorkshop();
+			System.out.println(ws);
+		}else {
+		System.out.println(event);	
+		}
+		}
+	
+	
+	
+	
+	@EventListener
+	public void handleBatchEvent(BatchEvent event) {
+		System.out.println("JLCLISTENER-->handleBatchEVENt");
+		System.out.println("batch event is raised");
+		System.out.println(event.getBatch());
+		
+	}
+		@EventListener
+		public void handleWorkshopEvent(WorkshopEvent event) {
+			System.out.println("JLCLISTENER-->handleworkshopEventEVENt");
+			System.out.println("workshopEvent is raised");
+			System.out.println(event.getWorkshop());
+			
+		}
+		
+		
+		@EventListener
+		public void handleHelloEvent(HelloEvent event) {
+			System.out.println("JLCLISTENER-->handleHelloEventEVENt");
+			System.out.println("HelloEvent is raised");
+			event.show();
+			
+		}
+	}
+

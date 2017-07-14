@@ -1,0 +1,47 @@
+package com.jlcindia.servlet;
+
+import java.io.*;
+import java.util.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class TestServlet extends HttpServlet{
+
+	protected void service(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException{
+		
+		//1.request parameter
+		String un=req.getParameter("uname");
+		String pw=req.getParameter("password");
+		
+		
+	//	display request parameters
+		
+		PrintWriter out=res.getWriter();
+		out.println(un);
+		out.println(pw);
+		out.println("<hr/>");
+		
+		
+		//request Headers
+		
+		Enumeration e=req.getHeaderNames();
+		while(e.hasMoreElements()) {
+			String hn=e.nextElement().toString();
+			String hv=req.getHeader(hn);
+			out.println("<br/>"+hn+":"+hv);
+			
+		}
+		
+		
+		
+		//locale supported by the browser
+		
+		out.println("<br/>req.getLocale"+req.getLocale());
+		
+		//other information from req
+		
+		out.println("<br/>req.getContextPath"+req.getContextPath());
+	}
+	
+}

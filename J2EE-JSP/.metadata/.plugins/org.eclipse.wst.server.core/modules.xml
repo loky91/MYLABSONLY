@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:Lab4_isThreadsafe_isErrorpage_errorPage" serverId="Tomcat v9.0 Server at localhost"/>
+</modules>

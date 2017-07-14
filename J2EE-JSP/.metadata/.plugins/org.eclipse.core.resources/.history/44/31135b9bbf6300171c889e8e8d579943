@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Lab4_isThreadsafe_isErrorpage_errorPage">
+        <property name="context-root" value="Lab4_isThreadsafe_isErrorpage_errorPage"/>
+    </wb-module>
+</project-modules>

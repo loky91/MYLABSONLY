@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>
+<br/>
+1)Storing attribute in context scope
+2)using page context acope
+
+<%
+
+pageContext.setAttribute("MSG1","servletcontext->message 1",pageContext.APPLICATION_SCOPE);
+
+%>
+
+<br/>
+B)Using servlet context scope
+<%
+application.setAttribute("MSG2","servletcontext->message 2");
+%>
+
+<br/>
+2)Storing attribute in session scope
+a)using pagecontextscope
+<br/>
+<%
+pageContext.setAttribute("MSG3","httpsession->Message 3",pageContext.SESSION_SCOPE);
+%>
+<br/>
+B)
+using Http session
+<%
+session.setAttribute("MSG4","Httpsession->Message 4");
+%>
+<br/>
+c)Storing attribute in request scope
+A)using pagecontextscope
+
+<%
+pageContext.setAttribute("MSG5","ServletRequest->message5",pageContext.REQUEST_SCOPE);
+%>
+<br/>
+B)using httpsession object
+<%
+request.setAttribute("MSG6","servletRequest->message6");
+%>
+<br/>
+D)Storing attribute in page scope
+<br/>
+A)using pagecontext scope
+<%
+pageContext.setAttribute("MSG7","page ->Message 7",pageContext.PAGE_SCOPE);
+pageContext.setAttribute("MSG8","page->Message 8");
+%>
+
+<hr/>
+<br/>
+<%=pageContext.getAttribute("MSG1",pageContext.APPLICATION_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG2",pageContext.APPLICATION_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG3",pageContext.SESSION_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG4",pageContext.SESSION_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG5",pageContext.REQUEST_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG6",pageContext.REQUEST_SCOPE) %>
+<br/>
+<br/>
+<%=pageContext.getAttribute("MSG1",pageContext.PAGE_SCOPE) %>
+<br/>
+<%=pageContext.getAttribute("MSG8") %>
+</h1>
+</body>
+</html>

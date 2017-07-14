@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<%@page import="java.util.*" %>
+<body>
+<center>
+<h1>JLC BOOK STORE</h1>
+<h2>BOOK SEARCH</h2>
+</center>
+
+
+<%
+Object obj=request.getAttribute("MSG");
+if(obj!=null){
+%>
+
+<center>
+<font color="red">
+<%=obj%>
+</font>
+</center>
+
+
+<%
+}else{
+
+obj=request.getAttribute("CART");
+
+ArrayList<String> blist=(ArrayList<String>)obj;
+
+for(String bnm:blist){
+	
+%>
+<form action="removefromcart.jlc" method="post">
+
+
+<input type="hidden" name="bname" value="<%=bnm%>"/>
+
+<font size="5"><%=bnm%>
+<input type="submit" value="remove from cart"/>
+</font>
+
+</form>
+<%} %>
+<br/>
+<center>
+<a href="placeorder.jsp">PLACE ORDER</a>
+</center>
+<br/>
+<%} %>
+<center>
+<a href="showbooks.jsp">ADD TO CART</a>
+</center>
+
+</body>
+</html>

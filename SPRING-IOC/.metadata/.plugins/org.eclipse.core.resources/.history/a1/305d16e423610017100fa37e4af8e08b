@@ -1,0 +1,15 @@
+package com.jlcindia.spring;
+
+
+import org.springframework.context.*;
+import org.springframework.context.support.*;
+
+public class TestBean {
+
+ApplicationContext ctx=new ClassPathXmlApplicationContext("jlcindia.xml");
+TestBean tb=(TestBean)ctx.getBean("testBean");
+tb.showEnglish();
+tb.showHindi();
+
+	
+}

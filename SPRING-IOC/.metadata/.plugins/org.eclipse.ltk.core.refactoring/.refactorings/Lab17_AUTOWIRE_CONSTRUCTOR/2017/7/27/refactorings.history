@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lab17_AUTOWIRE_CONSTRUCTOR/src/NewFile.xml&apos; to &apos;jlcindia.xml&apos;" description="Rename resource &apos;NewFile.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/NewFile.xml" name="jlcindia.xml" stamp="1499100318240" updateReferences="true"/>
+</session>

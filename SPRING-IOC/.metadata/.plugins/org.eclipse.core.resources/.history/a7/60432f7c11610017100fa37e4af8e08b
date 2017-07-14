@@ -1,0 +1,22 @@
+package com.jlcindia.spring;
+
+import javax.annotation.*;
+
+public class TestBean {
+
+	@Resource(name="oracleDS")
+	DataSource oracleDataSource;
+	
+	@Resource
+	DataSource mysqlDataSource;
+	
+	public void show() {
+		
+		System.out.println(oracleDataSource);
+		System.out.println(mysqlDataSource);
+	}
+	
+	
+	
+	
+}
