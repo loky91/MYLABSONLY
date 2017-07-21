@@ -1,0 +1,18 @@
+git init to create repository
+$ ssh-keygen -t -rsa -C "email"
+cd .ssh
+$ clip < id_rsa.pub
+$ git remote add myorigin url 
+git status
+git add filename or git add --all or git add .
+to remove --->>>git rm --cached filename
+git config --global user.email ""
+git config --global user.name ""
+git commit -m "message here"
+git log
+
+to push in repository of server
+
+to check name 
+git remote -v , take the name from it
+git push 
