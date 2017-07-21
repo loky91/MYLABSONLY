@@ -1,0 +1,10 @@
+package com.jlcindia.spring;
+
+public interface CustomerDAO {
+
+	
+	public void addCustomers(CustomerTO cto);
+	
+	
+	
+}

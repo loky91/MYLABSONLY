@@ -1,0 +1,99 @@
+package com.jlcindia.spring;
+
+
+
+
+
+
+
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+import com.jlcindia.spring.InsufficientFundsException;
+
+import org.hibernate.FlushMode;
+@Transactional
+public class HibernateAccountDAO implements AccountDAO {
+
+	@Autowired
+HibernateTemplate hibernateTemp;
+	
+	
+	
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW,isolation=Isolation.REPEATABLE_READ,readOnly=true)
+	public double getBalance(int accno) {
+System.out.println("inside getbal");
+		Account acc=hibernateTemp.load(Account.class,accno);
+		
+		return acc.getBal();
+	}
+	
+	
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void deposit(int accno,double amt) {
+		TransactionStatus ts=null;
+		
+			System.out.println("inside deposit");
+			Account acc=hibernateTemp.load(Account.class,accno);
+			double cbal=acc.getBal();
+			acc.setBal(cbal+amt);
+			hibernateTemp.update(acc);
+			
+	
+		
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRED)	
+public void withdraw(int accno,double amt) {
+		
+
+	
+	System.out.println("inside withdraw");
+	
+	Account acc=hibernateTemp.load(Account.class,accno);
+	double cbal=acc.getBal();
+	if(cbal>=1000+amt) {
+	acc.setBal(cbal-amt);
+	hibernateTemp.update(acc);
+		
+	}else {
+		throw new InsufficientFundsException();
+	}	
+	
+		
+	
+}//withdraw
+
+
+
+
+
+
+
+	@Transactional(propagation=Propagation.REQUIRES_NEW,isolation=Isolation.REPEATABLE_READ,readOnly=true)
+public void fundsTransfer(int saccno,int daccno,double amt) {
+	
+	 System.out.println("inside funds transfer");
+	 System.out.println("going to deposit");
+	 deposit(daccno, amt);
+	 System.out.println("going to withdraw"); 
+	 withdraw(saccno, amt);
+
+}
+
+
+
+
+
+
+
+}

@@ -1,0 +1,26 @@
+package com.jlcindia.spring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Lab61 {
+
+	
+public static void main(String args[]) {
+		
+		
+		
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("jlcindia.xml");
+		CustomerDAO cdao=(CustomerDAO)ctx.getBean("cdao");
+		//1.ADD CUstomer
+		CustomerTO cto=new CustomerTO(100,"shv","shv@jlc",77,"lcknow");
+		cdao.addCustomer(cto);
+	
+		
+		
+	
+		
+		
+		
+	}
+}

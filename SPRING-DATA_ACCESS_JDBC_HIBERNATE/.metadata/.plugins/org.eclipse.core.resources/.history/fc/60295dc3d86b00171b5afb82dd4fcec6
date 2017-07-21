@@ -1,0 +1,49 @@
+package com.jlcindia.spring;
+
+import java.util.List;
+
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Lab65 {
+
+	
+public static void main(String args[]) {
+		
+		
+		
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("jlcindia.xml");
+		CustomerDAO cdao=(CustomerDAO)ctx.getBean("cdao");
+		
+        
+		//1.getCustomerByEmail
+		System.out.println("getCustomerByEmail");
+		
+		DetachedCriteria dc=DetachedCriteria.forClass(Customer.class);
+		dc.add(Restrictions.eq("email",email));
+	
+		
+		
+		
+		//2.getCustomerByCity
+		
+		System.out.println("gteCustomerByCity");
+		List<CustomerTO> list=cdao.getCustomerByCity("lcknow");
+		for(CustomerTO ct:list) {
+			System.out.println(ct);
+			}
+		
+		
+		
+		
+		//3.getCustomerPhoneByEmail
+		System.out.println("getCustomerPhoneByEmail");
+		long ph=cdao.getCustomerPhoneByEmail("lll@jlc");
+		System.out.println(ph);
+		
+		
+	
+}
+}

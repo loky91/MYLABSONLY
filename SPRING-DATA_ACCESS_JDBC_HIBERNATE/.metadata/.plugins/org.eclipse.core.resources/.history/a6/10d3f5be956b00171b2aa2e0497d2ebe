@@ -1,0 +1,49 @@
+package com.jlcindia.spring;
+
+
+import java.util.*;
+import org.hibernate.LockMode;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+
+
+public class HibernateCustomerDAO implements CustomerDAO {
+@Autowired
+	HibernateTemplate hibernateTemp;
+	
+@Autowired
+HibernateTransactionManager txManager=null;
+
+
+public List<CustomerTO> getAllCustomers() {
+	List<CustomerTO> ctoList=new ArrayList<CustomerTO>();
+	String hql="from Customer c";
+	
+	List<Customer> list=(List<Customer>)hibernateTemp.find(hql);
+	
+	for(Customer c:list) {
+		
+		CustomerTO cto=new CustomerTO(c.getCid(),c.getName(),c.getEmail(),c.getPhone(),c.getCity());
+		ctoList.add(cto);
+		
+	}
+	return ctoList;
+}
+
+public String getCustomerByEmail(String email) {
+	String hql="from Customer c where c.email=?";
+	List<Customer> list=(List<Customer>)hibernateTemp.find(hql, email);
+	Customer c=(Customer)list.get(0);
+	
+	return c.getCity();
+	
+	
+}
+
+	
+}

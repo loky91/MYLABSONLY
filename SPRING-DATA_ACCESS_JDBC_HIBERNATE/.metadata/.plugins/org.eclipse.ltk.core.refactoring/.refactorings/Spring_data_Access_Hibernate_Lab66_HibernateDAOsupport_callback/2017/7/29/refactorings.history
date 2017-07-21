@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.jlcindia.spring.Lab65&apos; to &apos;Lab66&apos;&#x0D;&#x0A;- Original project: &apos;Spring_data_Access_Hibernate_Lab66_HibernateDAOsupport_callback&apos;&#x0D;&#x0A;- Original element: &apos;com.jlcindia.spring.Lab65&apos;&#x0D;&#x0A;- Renamed element: &apos;com.jlcindia.spring.Lab66&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Lab65&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.jlcindia.spring{Lab65.java[Lab65" matchStrategy="1" name="Lab66" qualified="false" references="true" similarDeclarations="false" stamp="1500396913411" textual="false" version="1.0"/>
+</session>

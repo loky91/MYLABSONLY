@@ -1,0 +1,83 @@
+package com.jlcindia.spring;
+
+
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.jlcindia.spring.InsufficientFundsException;
+import org.springframework.transaction.annotation.*;
+
+
+@Transactional
+public class JdbcAccountDAO implements AccountDAO {
+
+	@Autowired
+	JdbcTemplate jTemp;
+	
+	
+	
+	
+	
+	
+	@Override
+	public double getBalance(int accno) {
+		System.out.println("inside getbal");
+		String sql="select bal from accounts where accno=?";
+		System.out.println(sql);
+		double cbal=jTemp.queryForObject(sql,Double.class,accno);
+		System.out.println(cbal);
+		
+		return cbal;
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRED,isolation=Isolation.READ_COMMITTED)
+	public void deposit(int accno,double amt) {
+		String sql1="select bal from accounts where accno=?";
+		double cbal=jTemp.queryForObject(sql1,Double.class,accno);
+		cbal=cbal+amt;
+		String sql2="update accounts set bal=? where accno=?";
+		jTemp.update(sql2,cbal,accno);
+		
+		
+	}
+
+
+	@Transactional(propagation=Propagation.REQUIRED,isolation=Isolation.READ_COMMITTED)
+	public void withdraw(int accno,double amt) {
+		String sql1="select bal from accounts where accno=?";
+		double cbal=jTemp.queryForObject(sql1,Double.class,accno);
+		if(cbal>=1000+amt) {
+			cbal=cbal-amt;
+			String sql2="update accounts set bal=? where accno=?";
+			jTemp.update(sql2,cbal,accno);
+			
+		}else {
+			
+			throw new InsufficientFundsException();
+		}
+		
+	}
+
+	@Transactional(propagation=Propagation.REQUIRES_NEW,isolation=Isolation.READ_COMMITTED)
+	public void fundsTransfer(int saccno,int daccno,double amt) {
+		
+		
+		
+		 System.out.println("inside funds transfer");
+		 System.out.println("going to deposit");
+		 deposit(daccno, amt);
+		 System.out.println("going to withdraw"); 
+		 withdraw(saccno, amt);
+		 
+		 
+		 
+		
+	}
+	
+
+
+
+}
