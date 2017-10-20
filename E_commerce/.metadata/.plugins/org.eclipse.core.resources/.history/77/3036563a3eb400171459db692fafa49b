@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ecommerce login system</title>
+</head>
+<body>
+
+	
+<fieldset>
+<legend>NETPRISE</legend>
+<form action="LoginController" method="post">
+<table border="1" cellpadding="3" cellspacing="6" width="100%">
+
+<tr >
+<th colspan="2">
+LOGIN DETAILS
+</th>
+</tr>
+
+
+<tr>
+<td>USERNAME</td>
+<td ><input type="text" name="username" id="username" width="100%"/></td>
+</tr>
+
+
+
+<tr>
+<td>PASSWORD</td>
+<td><input type="password" name="password" id="password" width="100%"/></td>
+</tr>
+
+
+
+
+<tr>
+<td colspan="2"><center>
+<input type="submit" value="Login"/>
+</center>
+</td>
+</tr>
+</table>
+</form>
+</fieldset>
+
+</body>
+</html>

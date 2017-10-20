@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>login</display-name>
+	<welcome-file-list>
+	<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>LoginController</display-name>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.netprise.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/LoginController.net</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>AddToCartServlet</servlet-name>
+				<servlet-class>com.netprise.AddToCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddToCartServlet</servlet-name>
+		<url-pattern>/addtocart.net</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ShowCartServlet</servlet-name>
+				<servlet-class>com.netprise.ShowCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowCartServlet</servlet-name>
+		<url-pattern>/showcart.net</url-pattern>
+	</servlet-mapping>
+	
+
+<servlet>
+		<servlet-name>RemoveFromCartServlet</servlet-name>
+				<servlet-class>com.netprise.RemoveFromCartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveFromCartServlet</servlet-name>
+		<url-pattern>/removefromcart.net</url-pattern>
+	</servlet-mapping>
+	
+
+
+<servlet>
+		<servlet-name>PlaceOrderServlet</servlet-name>
+				<servlet-class>com.netprise.PlaceOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PlaceOrderServlet</servlet-name>
+		<url-pattern>/placeorder.net</url-pattern>
+	</servlet-mapping>
+
+
+
+<servlet>
+		<servlet-name>ForgotPWAction</servlet-name>
+				<servlet-class>com.netprise.ForgotPWAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForgotPWAction</servlet-name>
+		<url-pattern>/placeorder.net</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

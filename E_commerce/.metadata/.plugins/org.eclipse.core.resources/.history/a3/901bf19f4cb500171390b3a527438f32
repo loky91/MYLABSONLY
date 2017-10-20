@@ -1,0 +1,32 @@
+package com.netprise;
+
+import java.io.Serializable;
+
+public class ProductTO implements Serializable {
+
+	
+	String pid;
+	String product_name;
+	public String getPid() {
+		return pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
+	public String getProduct_name() {
+		return product_name;
+	}
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+	@Override
+	public String toString() {
+		return "ProductTO [pid=" + pid + ", product_name=" + product_name + "]";
+	}
+	
+	
+	
+	
+	
+	
+}

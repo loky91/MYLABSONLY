@@ -1,0 +1,15 @@
+package com.netprise;
+
+public class ProductTO {
+
+	String productname;
+
+	public String getProductname() {
+		return productname;
+	}
+
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+	
+}
