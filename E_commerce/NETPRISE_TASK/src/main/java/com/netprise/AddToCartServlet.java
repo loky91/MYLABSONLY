@@ -30,7 +30,7 @@ public class AddToCartServlet extends HttpServlet {
 			session.setAttribute(productname, productname);
 			
 			
-			request.setAttribute("ADDED",productname+" "+":IS ADDED TO THE CART SUCCESSFULLY");
+			request.setAttribute("ADDED",productname+" "+":is added to the cart successfully");
 			
 			
 			

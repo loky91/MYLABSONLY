@@ -7,7 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>CONFIRMATION PAGE</title>
 </head>
-<body bgcolor="grey">
-THANKU<font color="red">{$UN}</font>YOUR ORDER IS PLACED SUCCESSFULLY
+<body bgcolor="white">
+<center>THANKU<pre><font color="red" > ${U} </font></pre>YOUR ORDER IS PLACED SUCCESSFULLY</center>
+<hr/>
+<center><font><a href="LogoutServlet">LOGOUT</a></font></center>
 </body>
 </html>

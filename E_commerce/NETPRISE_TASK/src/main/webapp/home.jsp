@@ -13,12 +13,12 @@
 </head>
 
 <BODY BGCOLOR=#FFFFFF>
+<font size="6">
 <B><I>NETPRISE: Ecommerce Platform</I></B> 
+</font>
 
 
-
-
-<pre><font color="red" size="4">
+<pre><font color="red" size="5">
 
 Welcome ${UN}
 </font></pre>

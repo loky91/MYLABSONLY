@@ -71,4 +71,15 @@
 	</servlet-mapping>
 
 
+
+
+<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+				<servlet-class>com.netprise.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet.net</url-pattern>
+	</servlet-mapping>
+
 </web-app>

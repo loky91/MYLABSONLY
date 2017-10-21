@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.util.*" %>
+<%@page import="com.netprise.LoginController" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -20,7 +21,9 @@ if(obj!=null){
 else{
 	
 obj=request.getAttribute("CART");
+
 ArrayList<String> plist=(ArrayList<String>)obj;
+
 %>
 <br/>
 <br>
@@ -39,9 +42,11 @@ for(String pnm:plist){
 
 %>
 <tr>
+
+
 <td width="2">
 <input type="hidden" name="p_name" value="<%=pnm%>"/>
-<font size="4"><%=pnm%></font>
+<font size="5"><%=pnm%></font>
 </td>
 <td width="1%">
 <center>
@@ -63,8 +68,10 @@ for(String pnm:plist){
 
 <form action="placeorder.net">
 <%
+
 for(String pnm:plist){
 %>
+
 <input type="hidden" name="pname" value="<%=pnm%>">
 <%}
 %>

@@ -22,12 +22,11 @@ public class PlaceOrderServlet extends HttpServlet {
 			req.setAttribute("MSG","session is DESTROYED");
 		}else {
 		
-		Object o=req.getAttribute("UN");
-		String un=o.toString();
+			String un=(String)session.getAttribute("UN");
 		String pn=req.getParameter("pname");
 		
-		System.out.println(un);
-		System.out.println(pn);
+		System.out.println("un---->"+un);
+		System.out.println("pn---->"+pn);
 		int x=userservice.addProduct(pn,un);
 
 	
@@ -36,7 +35,7 @@ public class PlaceOrderServlet extends HttpServlet {
 		
 		if(x==1) {
 			System.out.println("--->"+un);
-			session.setAttribute("UN",un);
+			req.setAttribute("U",un);
 			result="placeorder.jsp";
 			
 		}else {

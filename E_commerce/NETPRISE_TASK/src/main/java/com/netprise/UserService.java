@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.Driver;
+//import com.mysql.jdbc.Driver;
 import com.netprise.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,19 +29,17 @@ public class UserService {
 		
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		 // loads driver
-		Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/NETPRISE", "root", "root"); // gets a new connection
- 
-	 ps = c.prepareStatement("select user_name,password from users where user_name=? and password=?");
-		ps.setString(1, un);
+			con=JDBCUtil.getMySQLConnection();
+			String sql="select user_name,password from users where user_name=? and password=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, un);
 		ps.setString(2, pw);
  
 		 rs = ps.executeQuery();
  if(rs.next())
 	 x=1;
 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {

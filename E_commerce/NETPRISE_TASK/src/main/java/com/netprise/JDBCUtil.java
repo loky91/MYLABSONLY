@@ -11,7 +11,7 @@ public class JDBCUtil {
 		
 		try {
 			
-			Class.forName("com.mysql.jdbc.driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			
 			
 		}catch(ClassNotFoundException ex) {
@@ -48,21 +48,6 @@ public class JDBCUtil {
 	}
 	
 
-	public static void cleanup(PreparedStatement ps,Connection con) {
-		
-		try {
-			if(ps!=null)
-				ps.close();
-			if(con!=null)
-				con.close();
-			
-			
-		}catch(Exception e) {
-			
-			System.out.println(e);
-		}
-		
-	}
 	
 	
 		public static void cleanup(ResultSet rs,Statement st,Connection con) {
@@ -86,25 +71,7 @@ public class JDBCUtil {
 	}
 		
 
-		public static void cleanup(ResultSet rs,PreparedStatement ps,Connection con) {
-			
-			try {
-				if(rs!=null)
-					rs.close();
-				
-				if(ps!=null)
-					ps.close();
-				if(con!=null)
-					con.close();
-				
-				
-			}catch(Exception e) {
-				
-				System.out.println(e);
-			}
 		
-		
-	}
 		
 
 	

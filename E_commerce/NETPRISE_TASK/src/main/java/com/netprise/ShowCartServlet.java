@@ -27,15 +27,20 @@ public class ShowCartServlet extends HttpServlet{
 		
 	}else {
 		Enumeration<String> enms=session.getAttributeNames();
-		List selectedlist=Collections.list(enms);
 		
-		System.out.println(selectedlist);
-	if(selectedlist.size()==0) {
+		
+		List selectedlist=Collections.list(enms);
+	
+		System.out.println("---->"+selectedlist);
+		selectedlist.remove("UN");
+		
+	if(selectedlist.size()==0 ) {
 		
 		request.setAttribute("MSG","NO PRODUCTS SELECTED");
 	}else {
-		System.out.println("inside else part");
+		
 		request.setAttribute("CART",selectedlist);
+		
 	}
 	
 	RequestDispatcher rd=request.getRequestDispatcher("showcart.jsp");
